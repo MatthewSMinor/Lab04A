@@ -8,29 +8,35 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-public class TipCalcActivity extends AppCompatActivity {
-    private TextView bill;
-    private TextView tipPercent;
-    private TextView numOfPeople;
-    private TextView result;
+public class tempCalcActivity extends AppCompatActivity {
 
-    public void calcClicked(View v){
-        Double billAmount = Double.valueOf(bill.getText().toString());
-        Double tip = Double.valueOf(tipPercent.getText().toString());
-        int people = Integer.valueOf(numOfPeople.getText().toString());
+    private TextView tempinput;
+    private TextView tempresult;
 
-        Double costPerPerson = billAmount + (billAmount*(tip/100));
-        costPerPerson = costPerPerson/people;
-        result.setText(costPerPerson.toString());
 
+    public void btnFtoCClicked(View v){
+        //(32°F − 32) × 5/9 = 0°C
+        Double f = Double.valueOf(tempinput.toString());
+        Double c = ((f-32) * (5/9));
+
+        tempresult.setText(c.toString());
     }
+
+    public void btnCtoFClicked(View v){
+        //(0°C × 9/5) + 32 = 32°F
+        Double c = Double.valueOf(tempinput.toString());
+        Double f = (c*(9/5))+32;
+
+        tempresult.setText(f.toString());
+    }
+
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tip_calc);
+        setContentView(R.layout.activity_temp_calc);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,10 +49,9 @@ public class TipCalcActivity extends AppCompatActivity {
             }
         });
 
-        bill = findViewById(R.id.billAmount);
-        tipPercent = findViewById(R.id.tipPercent);
-        numOfPeople = findViewById(R.id.numOfPeople);
-        result = findViewById(R.id.result);
+        tempinput = findViewById(R.id.tempInput);
+        tempresult = findViewById(R.id.tempResult);
+
     }
 
 }

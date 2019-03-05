@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void tempCalcClicked(View v){
+        Intent i = new Intent(this, tempCalcActivity.class);
+        startActivity(i);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
