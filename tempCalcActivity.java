@@ -16,7 +16,7 @@ public class tempCalcActivity extends AppCompatActivity {
 
     public void btnFtoCClicked(View v){
         //(32°F − 32) × 5/9 = 0°C
-        Double f = Double.valueOf(tempinput.toString());
+        Double f = Double.valueOf(tempinput.getText().toString());
         Double c = ((f-32) * (5/9));
 
         tempresult.setText(c.toString());
@@ -24,7 +24,7 @@ public class tempCalcActivity extends AppCompatActivity {
 
     public void btnCtoFClicked(View v){
         //(0°C × 9/5) + 32 = 32°F
-        Double c = Double.valueOf(tempinput.toString());
+        Double c = Double.valueOf(tempinput.getText().toString());
         Double f = (c*(9/5))+32;
 
         tempresult.setText(f.toString());
