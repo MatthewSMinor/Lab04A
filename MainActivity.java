@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void milesToKiloClicked(View v){
+        Intent i = new Intent(this, milesToKiloActivity.class);
+        startActivity(i);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
